@@ -6,7 +6,7 @@ using DNS.Server;
 namespace Bam.Net.Services
 {
     [Serializable]
-    public class ConsoleActions : CommandLineTestInterface
+    public class ConsoleActions : CommandLineTool
     {
         private static SimpleDnsServer _server;
 

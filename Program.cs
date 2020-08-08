@@ -5,7 +5,7 @@ using Bam.Net.Testing;
 namespace Bam.Net.System
 {
     [Serializable]
-    public class Program : CommandLineTestInterface
+    public class Program : CommandLineTool
     {
         static void Main(string[] args)
         {
