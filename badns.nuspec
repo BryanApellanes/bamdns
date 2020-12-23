@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>badns</id>
-    <version>1.0.5-test+9a42ec6</version>
+    <version>1.0.5-test+3b43591</version>
     <authors>Bryan Apellanes</authors>
     <description>badns</description>
   </metadata>
