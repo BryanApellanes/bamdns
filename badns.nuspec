@@ -1,9 +1,9 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>badns</id>
+    <id>bamdns</id>
     <version>1.0.5-test+551abc5</version>
     <authors>Bryan Apellanes</authors>
-    <description>badns</description>
+    <description>bamdns</description>
   </metadata>
   <files>
     <file src="_._" target="lib/net5.0" />

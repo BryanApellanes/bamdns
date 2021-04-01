@@ -8,6 +8,7 @@
     <IntermediatePackDir>$(MSBuildProjectDirectory)/bin/$(Configuration)/</IntermediatePackDir>
     <PublishDir>$(IntermediatePackDir)$(TargetFramework)/</PublishDir>
     <NuspecProperties>publishDir=$([MSBuild]::NormalizeDirectory($(IntermediatePackDir)))</NuspecProperties>
+    <RootNamespace>badns</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="12.1.2" />
