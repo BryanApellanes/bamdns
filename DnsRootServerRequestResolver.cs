@@ -84,9 +84,10 @@ namespace Bam.Net.CoreServices.NameResolution
             string rootDnsServerData = Path.Combine(".", "root-servers.csv");
             if (!File.Exists(rootDnsServerData))
             {
-                Log.Warn("root-servers.csv file not found, BaDns will not resolve public host records: {0}", rootDnsServerData);
+                Log.Warn("root-servers.csv file not found, BamDns will not resolve public host records: {0}", rootDnsServerData);
                 return;
             }
+            
             using (StreamReader reader = new StreamReader(rootDnsServerData))
             {
                 using (CsvReader csvReader = new CsvReader(reader))

@@ -5,7 +5,7 @@ using DNS.Client.RequestResolver;
 namespace Bam.Net.CoreServices.NameResolution
 {
     /// <summary>
-    /// A Dns client that requests name resolution form a specified DnsServerDescriptor 
+    /// A Dns client that requests name resolution from a specified DnsServerDescriptor 
     /// </summary>
     public class DnsServerDescriptorClient : DNS.Client.DnsClient
     {
