@@ -1,4 +1,5 @@
 ﻿using System;
+using Bam.Net.CommandLine;
 using Bam.Net.Services;
 using Bam.Net.Testing;
 
@@ -15,7 +16,7 @@ namespace Bam.Net.System
             AddConfigurationSwitches();
             Initialize(args, (a) =>
             {
-                OutLineFormat("Error parsing arguments: {0}", ConsoleColor.Red, a.Message);
+                Message.PrintLine("Error parsing arguments: {0}", ConsoleColor.Red, a.Message);
                 Environment.Exit(1);
             });
 
