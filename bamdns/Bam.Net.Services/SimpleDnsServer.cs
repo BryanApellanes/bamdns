@@ -27,7 +27,7 @@ namespace Bam.Net.Services
         
         public void Listen(int port = 53)
         {   
-            DnsServer server = new DnsServer(new DnsRootServerRequestResolver());
+            DnsServer server = new DnsServer(new BamDnsRequestResolver());
             server.Listen(port);
             DnsServer = server;
         }

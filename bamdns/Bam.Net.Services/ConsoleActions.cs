@@ -17,7 +17,7 @@ namespace Bam.Net.Services
             _server.Start();
             Pause("bamdns started", () =>
             {
-                OutLine("bamdns started", ConsoleColor.Green);
+                Message.PrintLine("bamdns started", ConsoleColor.Green);
             });
         }
 
@@ -25,7 +25,7 @@ namespace Bam.Net.Services
         public static void KillServer()
         {
             _server?.Stop();
-            OutLine("bamdns stopped");
+            Message.PrintLine("bamdns stopped");
         }
         
     }

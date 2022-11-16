@@ -1,0 +1,3 @@
+[submodule "submodules/bam.core"]
+	path = submodules/bam.core
+	url = https://github.com/BryanApellanes/Bam.Core.git
