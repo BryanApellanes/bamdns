@@ -1,3 +1,6 @@
 [submodule "submodules/bam.core"]
 	path = submodules/bam.core
 	url = https://github.com/BryanApellanes/Bam.Core.git
+[submodule "submodules/bamio"]
+	path = submodules/bamio
+	url = https://github.com/BryanApellanes/bamio.git

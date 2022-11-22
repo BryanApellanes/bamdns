@@ -17,6 +17,9 @@
       <OutputPath Condition=" '$(OS)' == 'UNIX' ">$(HOME)\.bam\build\$(Configuration)\$(MSBuildThisFileName)\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="DnsRootServerRequestResolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="12.1.2" />
     <PackageReference Include="DNS" Version="5.0.0" />
     <PackageReference Include="DnsClient" Version="1.7.0" />

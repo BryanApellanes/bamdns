@@ -30,24 +30,36 @@ namespace Bam.Net.CoreServices.NameResolution
         public async Task<IResponse> Resolve(IRequest request)
         {
             IResponse response = Response.FromRequest(request);
-            List<Task> resolutions = new List<Task>();
-            foreach(RootDnsServerDescriptor serverDescriptor in _serverDescriptors)
-            {
-                try
-                {
-                    LookupClient dnsClient = new LookupClient(IPAddress.Parse(serverDescriptor.Ipv4Address));
-                    foreach(Question requestQuestion in request.Questions)
-                    {
-                        DnsQuestion question = new DnsQuestion(requestQuestion.ToString(), QueryType.A);
-                    }
+            RootDnsServerDescriptor server = _serverDescriptors.FirstOrDefault();
 
-                    IDnsQueryResponse dnsResponse = dnsClient.Query();
-                }
-                catch (Exception ex)
-                {
-                    Message.PrintLine("{0}:\r\n{1}", ex, ex.Message, ex.StackTrace);
-                }
+            ClientRequest clientRequest = new ClientRequest(server.Ipv4Address);
+            clientRequest.RecursionDesired = true;
+
+            foreach(Question question in response.Questions)
+            {
+                clientRequest.Questions.Add(question);
             }
+
+            try
+            {
+                IResponse clientResponse = await clientRequest.Resolve();
+                foreach(DNS.Protocol.ResourceRecords.IResourceRecord record in clientResponse.AdditionalRecords)
+                {
+                    response.AdditionalRecords.Add(record);
+                }
+                foreach(DNS.Protocol.ResourceRecords.IResourceRecord record in clientResponse.AnswerRecords)
+                {
+                    response.AnswerRecords.Add(record);
+                }
+
+                response.AuthenticData = clientResponse.AuthenticData;
+                response.AuthorativeServer = clientResponse.AuthorativeServer;
+            }
+            catch (Exception ex)
+            {
+                Message.PrintLine("{0}:\r\n{1}", ex, ex.Message, ex.StackTrace);
+            }
+
             return response;
         }
 
