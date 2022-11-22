@@ -29,19 +29,19 @@ namespace Bam.Net.CoreServices.NameResolution
 
         public async Task<IResponse> Resolve(IRequest request)
         {
-            IResponse response = Response.FromRequest(request);
-            RootDnsServerDescriptor server = _serverDescriptors.FirstOrDefault();
-
-            ClientRequest clientRequest = new ClientRequest(server.Ipv4Address);
-            clientRequest.RecursionDesired = true;
-
-            foreach(Question question in response.Questions)
-            {
-                clientRequest.Questions.Add(question);
-            }
-
             try
             {
+                IResponse response = Response.FromRequest(request);
+                RootDnsServerDescriptor server = _serverDescriptors.FirstOrDefault();
+
+                ClientRequest clientRequest = new ClientRequest(server.Ipv4Address);
+                clientRequest.RecursionDesired = true;
+
+                foreach (Question question in response.Questions)
+                {
+                    clientRequest.Questions.Add(question);
+                }
+
                 IResponse clientResponse = await clientRequest.Resolve();
                 foreach(DNS.Protocol.ResourceRecords.IResourceRecord record in clientResponse.AdditionalRecords)
                 {
