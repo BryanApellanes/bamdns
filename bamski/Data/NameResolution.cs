@@ -4,11 +4,11 @@ using Bam.Net.Data.Repositories;
 using DNS.Protocol;
 using DNS.Protocol.ResourceRecords;
 
-namespace Bam.Net.CoreServices.NameResolution.Data
+namespace Bam.SocialKeyInfrastructure.Data
 {
-    public class DnsResponse : CompositeKeyAuditRepoData
+    public class NameResolution : CompositeKeyAuditRepoData
     {
-        public DnsResponse()
+        public NameResolution()
         {
             Code = Cuid;
         }

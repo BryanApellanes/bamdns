@@ -1,6 +1,6 @@
-namespace Bam.Net.CoreServices.NameResolution.Data
+namespace Bam.SocialKeyInfrastructure.Data
 {
-    public class ApplicationServiceHostResponse : ServiceHostResponse
+    public class ApplicationServiceHostResponse : ServiceHostNameResolution
     {
         public string ApplicationName { get; set; }
     }

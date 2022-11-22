@@ -1,6 +1,6 @@
 using Bam.Net.Data.Repositories;
 
-namespace Bam.Net.CoreServices.NameResolution.Data
+namespace Bam.SocialKeyInfrastructure.Data
 {
     public class DnsServerDescriptor: CompositeKeyAuditRepoData
     {

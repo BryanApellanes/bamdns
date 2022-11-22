@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bamski.Data
+namespace Bam.SocialKeyInfrastructure.Data
 {
-    internal class Device
+    public class Device
     {
     }
 }
