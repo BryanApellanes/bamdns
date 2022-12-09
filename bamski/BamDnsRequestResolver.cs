@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DnsClient;
+using Bam.SocialKeyInfrastructure.Data;
 
 namespace Bam.Net.CoreServices.NameResolution
 {
@@ -29,9 +30,10 @@ namespace Bam.Net.CoreServices.NameResolution
 
         public async Task<IResponse> Resolve(IRequest request)
         {
+
+            IResponse response = Response.FromRequest(request);
             try
             {
-                IResponse response = Response.FromRequest(request);
                 RootDnsServerDescriptor server = _serverDescriptors.FirstOrDefault();
 
                 ClientRequest clientRequest = new ClientRequest(server.Ipv4Address);

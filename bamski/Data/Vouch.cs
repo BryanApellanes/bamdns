@@ -1,4 +1,5 @@
 using Bam.Net.Data.Repositories;
+using Bam.SocialKeyInfrastructure.Data;
 
 namespace Bam.Net.CoreServices.NameResolution.Data
 {
